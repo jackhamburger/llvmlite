@@ -127,6 +127,7 @@ if bdist_wheel:
             # Ensure the binding file exist when running wheel build
             from llvmlite.utils import get_library_files
             # Turn on -fPIC for wheel building on Linux
+            print(sys.platform)
             pic = sys.platform.startswith('linux')
             build_library_files(self.dry_run, pic=pic)
             self.distribution.package_data.update({
