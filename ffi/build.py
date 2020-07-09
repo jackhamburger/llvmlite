@@ -169,6 +169,7 @@ def main_posix(kind, library_ext):
     if int(os.environ.get('LLVMLITE_CXX_STATIC_LINK', 0)):
         os.environ['CXX_STATIC_LINK'] = "-static-libstdc++"
 
+    print(os.environ)
     makefile = "Makefile.%s" % (kind,)
     subprocess.check_call(['make', '-f', makefile])
     shutil.copy('libllvmlite' + library_ext, target_dir)
